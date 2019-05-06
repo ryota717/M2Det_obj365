@@ -63,6 +63,8 @@ As simple as [demo](#Demo) and [evaluation](#Evaluation), Just use the train scr
 ```Shell
   CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py -c=configs/m2det800_resnext.py --ngpu 4 -t True
 ```
+
+When you use VGG as backbone, download pre-trained model from [here](https://s3.amazonaws.com/amdegroot-models/vgg16_reducedfc.pth) and put it "M2Det_obj365/weights/".
 All training configs and model configs are written well in configs/*.py.
 
 ### Citation:
