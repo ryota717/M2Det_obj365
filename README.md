@@ -51,41 +51,11 @@ sh make.sh
 ```
 
 
-## Demo
-
-**We provide a M2Det512_vgg pretrained model for demonstration(visualization):**
-
-First, download the pretrained m2det512_vgg.pth([baidu cloud](https://pan.baidu.com/s/1LDkpsQfpaGq_LECQItxRFQ),[google drive](https://drive.google.com/file/d/1NM1UDdZnwHwiNDxhcP-nndaWj24m-90L/view?usp=sharing)) file. Then, move the file to weights/.
-
-```Shell
-  python demo.py -c=configs/m2det512_vgg.py -m=weights/m2det512_vgg.pth --show
-```
-You can see the image with drawed boxes as:
+## Demo(preparing...)
 
 
-<div align=center><img src="imgs/COCO_train2014_000000000659_m2det.jpg" width="450" hegiht="163" align=center />
+## Evaluation(preparing...)
 
-<div align=left>
-
-## Evaluation
-
-1, **We provide evaluation script for M2Det:**
-```Shell
-  python test.py -c=configs/m2det512_vgg.py -m=weights/m2det512_vgg.pth
-```
-Then, the evaluated result is shown as:
-
-<div align=center><img src="imgs/vis/eval_result.png" width="450" hegiht="163" align=center />
-
-<div align=left>
-
- Even higher than our paper's original result! :)
-
-**2, You can run the test set with M2Det and submit to get a score:**
-```Shell
-  python test.py -c=configs/m2det512_vgg.py -m=weights/m2det512_vgg.pth --test
-```
-and submit the result file to [CODALAB webpage](https://competitions.codalab.org/competitions/5181#participate).
 
 ## Training
 
@@ -94,14 +64,6 @@ As simple as [demo](#Demo) and [evaluation](#Evaluation), Just use the train scr
   CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py -c=configs/m2det512_vgg.py --ngpu 4 -t True
 ```
 All training configs and model configs are written well in configs/*.py.
-
-## Multi-scale Evaluation
-To be added.
-
-## Pre-trained Files
-Now, we only provide m2det512_vgg.pth([baidu cloud](https://pan.baidu.com/s/1LDkpsQfpaGq_LECQItxRFQ),[google drive](https://drive.google.com/file/d/1NM1UDdZnwHwiNDxhcP-nndaWj24m-90L/view?usp=sharing)) due to we have other tasks recently, we decide to release other models in the future.
-
-## Others
 
 ### Citation:
 
@@ -120,11 +82,4 @@ Please cite the following paper if you feel M2Det useful to your research
   booktitle   = {The Thirty-Third AAAI Conference on Artificial Intelligence,AAAI},
   year      = {2019},
 }
-```
-
-
-## Contact
-For any question, please file an issue or contact
-```
-Qijie Zhao: zhaoqijie@pku.edu.cn
 ```
