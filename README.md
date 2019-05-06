@@ -1,15 +1,14 @@
 # M2Det_obj365
-Codebase for AAAI2019 "M2Det: A Single-Shot Object Detector based on Multi-Level Feature Pyramid Network" [[Paper link]](https://qijiezhao.github.io/imgs/m2det.pdf)
-
-Author: Qijie Zhao. Date: 19/01/2019
+M2Det for objects365 dataset.
+The code based on [original M2Det](https://github.com/qijiezhao/M2Det)
 
 # Contents
 
 * [Data Preparation and Installation](#Preparation)
 
-* [Demo](#Demo)
+* [Demo(preparing...)](#Demo)
 
-* [Evaluation](#Evaluation)
+* [Evaluation(preparing...)](#Evaluation)
 
 * [Training](#Training)
 
