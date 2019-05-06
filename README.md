@@ -61,7 +61,7 @@ sh make.sh
 
 As simple as [demo](#Demo) and [evaluation](#Evaluation), Just use the train script:
 ```Shell
-  CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py -c=configs/m2det512_vgg.py --ngpu 4 -t True
+  CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py -c=configs/m2det800_resnext.py --ngpu 4 -t True
 ```
 All training configs and model configs are written well in configs/*.py.
 
