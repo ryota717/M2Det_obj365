@@ -24,7 +24,7 @@ pip install opencv-python,tqdm
 ```
 - Clone this repository.
 ```Shell
-git clone https://github.com/qijiezhao/M2Det.git
+git clone https://github.com/ryota717/M2Det_obj365.git
 ```
 - Compile the nms and coco tools:
 
@@ -32,7 +32,23 @@ git clone https://github.com/qijiezhao/M2Det.git
 sh make.sh
 ```
 
-- Prepare dataset (e.g., VOC, COCO), refer to [sss.pytorch](https://github.com/amdegroot/ssd.pytorch) for detailed instructions.
+- Prepare objects365 dataset and put them on /home/data, as shown in below.
+
+```
+/home/
+      ┣ data/
+            ┣ objects365/
+                ┣ annotations/
+                    ┣ instances_train.json
+                    ┣ instances_val.json
+                ┣ images/
+                    ┣ train/
+                        ┣ 〇〇〇〇.jpg
+                        ┣ △△△△.jpg
+                    ┣ val/
+                        ┣ 〇〇〇〇.jpg
+                        ┣ △△△△.jpg
+```
 
 
 ## Demo
