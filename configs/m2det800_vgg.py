@@ -12,7 +12,7 @@ model = dict(
         num_scales = 6,
         sfam = False,
         smooth = True,
-        num_classes = 81,
+        num_classes = 366,
         ),
     rgb_means = (104, 117, 123),
     p = 0.6,

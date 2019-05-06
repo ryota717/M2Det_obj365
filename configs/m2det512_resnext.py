@@ -1,24 +1,24 @@
 model = dict(
     type = 'm2det',
-    input_size = 320,
+    input_size = 512,
     init_net = True,
-    pretrained = 'weights/vgg16_reducedfc.pth',
+    pretrained = 'None',
     m2det_config = dict(
-        backbone = 'vgg16',
-        net_family = 'vgg', # vgg includes ['vgg16','vgg19'], res includes ['resnetxxx','resnextxxx']
-        base_out = [22,34], # [22,34] for vgg, [2,4] or [3,4] for res families
+        backbone = 'se_resnext101_32x4d',
+        net_family = 'res', # vgg includes ['vgg16','vgg19'], res includes ['resnetxxx','resnextxxx']
+        base_out = [2,4], # [22,34] for vgg, [2,4] or [3,4] for res families
         planes = 256,
         num_levels = 8,
         num_scales = 6,
         sfam = False,
         smooth = True,
-        num_classes = 81,
+        num_classes = 366,
         ),
     rgb_means = (104, 117, 123),
     p = 0.6,
     anchor_config = dict(
-        step_pattern = [8, 16, 32, 64, 107, 320],
-        size_pattern = [0.08, 0.15, 0.33, 0.51, 0.69, 0.87, 1.05],
+        step_pattern = [8, 16, 32, 64, 128, 256],
+        size_pattern = [0.06, 0.15, 0.33, 0.51, 0.69, 0.87, 1.05],
         ),
     save_eposhs = 10,
     weights_save = 'weights/'
@@ -33,7 +33,8 @@ train_cfg = dict(
     end_lr = 1e-6,
     step_lr = dict(
         COCO = [90, 110, 130, 150, 160],
-        VOC = [100, 150, 200, 250, 300], # unsolve
+        VOC = [100, 150, 200, 250, 300],
+        objects365 = [45, 55, 65, 75, 80], # unsolve
         ),
     print_epochs = 10,
     num_workers= 8,
@@ -68,6 +69,10 @@ dataset = dict(
         train_sets = [('2014', 'train'), ('2014', 'valminusminival')],
         eval_sets = [('2014', 'minival')],
         test_sets = [('2015', 'test-dev')],
+        ),
+    objects365 = dict(
+        train_sets = [('train', '')],
+        eval_sets = [('val', '')],
         )
     )
 
@@ -75,3 +80,4 @@ import os
 home = os.path.expanduser("~")
 VOCroot = os.path.join(home,"data/VOCdevkit/")
 COCOroot = os.path.join(home,"data/coco/")
+objects365root = os.path.join(home,"data/objects365/")

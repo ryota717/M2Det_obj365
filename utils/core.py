@@ -73,8 +73,8 @@ def adjust_learning_rate(optimizer, gamma, epoch, step_index, iteration, epoch_s
         lr = cfg.train_cfg.end_lr + (cfg.train_cfg.lr[0]-cfg.train_cfg.end_lr)\
          * iteration / (epoch_size * cfg.train_cfg.warmup)
     else:
-        for i in range(len(cfg.train_cfg.step_lr.COCO)):
-            if cfg.train_cfg.step_lr.COCO[i]>=epoch:
+        for i in range(len(cfg.train_cfg.step_lr.objects365)):
+            if cfg.train_cfg.step_lr.objects365[i]>=epoch:
                 lr = cfg.train_cfg.lr[i]
                 break
         # lr = cfg.train_cfg.init_lr * (gamma ** (step_index))
