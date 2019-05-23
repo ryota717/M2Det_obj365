@@ -73,6 +73,7 @@ dataset = dict(
     objects365 = dict(
         train_sets = [('train', '')],
         eval_sets = [('val', '')],
+        test_sets = [('test', '')],
         )
     )
 

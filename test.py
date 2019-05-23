@@ -90,11 +90,11 @@ if __name__ == '__main__':
     detector = Detect(cfg.model.m2det_config.num_classes, cfg.loss.bkg_label, anchor_config)
     save_folder = os.path.join(cfg.test_cfg.save_folder, args.dataset)
     _preprocess = BaseTransform(cfg.model.input_size, cfg.model.rgb_means, (2, 0, 1))
-    test_net(save_folder, 
-             net, 
-             detector, 
-             cfg.test_cfg.cuda, 
-             testset, 
-             transform = _preprocess, 
-             max_per_image = cfg.test_cfg.topk, 
+    test_net(save_folder,
+             net,
+             detector,
+             cfg.test_cfg.cuda,
+             testset,
+             transform = _preprocess,
+             max_per_image = cfg.test_cfg.topk,
              thresh = cfg.test_cfg.score_threshold)
